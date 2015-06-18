@@ -1,0 +1,8 @@
+﻿<div class="panel panel-primary" state-display="level panel-primary panel-success panel-danger">
+    <div class="panel-heading" data-ng-click="Collapse()">
+        Name: {{ name }}
+        <button class="btn btn-xs btn-info pull-right" data-ng-click="NextState($event)">Next State</button>
+    </div>
+    <div class="panel-body" data-ng-hide="collapsed" data-ng-transclude="">
+    </div>
+</div>

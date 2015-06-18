@@ -1,0 +1,33 @@
+﻿<div class="panel panel-primary" state-display="vm.user.level panel-primary panel-success panel-danger">
+    <div class="panel-heading" data-ng-click="vm.Collapse()">
+        Name: {{ vm.user.name }}
+    </div>
+    <div class="panel-body" data-ng-hide="vm.collapsed">
+        <address></address>
+        <div data-ng-show="vm.user.friends">
+            <h4>Friends:</h4>
+            <ul>
+                <li data-ng-repeat="friend in vm.user.friends">
+                    {{ friend }}
+                    <remove-friend method="vm.RemoveFriend(friend)"></remove-friend>
+                </li>
+            </ul>
+        </div>
+        <div data-ng-show="vm.user.rank">
+            Rank: {{ vm.user.rank }}
+        </div>
+        <button type="button" class="btn btn-success" data-ng-click="vm.KnightMe(vm.user)" data-ng-hide="vm.user.rank">Knight Me</button>
+        <button type="button" class="btn btn-info" data-ng-click="vm.NextState()">Next State</button>
+    </div>
+
+    <modal open="vm.showKnightModal" option="{width: '100px', left: '40px'}" on-close="KnightModalDone(response)">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Jedi Knight</div>
+            <div class="panel-body">
+                <p>Do you want the Jedi Knight rank granted to {{ vm.user.name }}?</p>
+                <button type="button" class="btn btn-success" data-ng-click="vm.KnightDialogDone(true)">Yes</button>
+                <button type="button" class="btn btn-danger" data-ng-click="vm.KnightDialogDone(false)">No</button>
+            </div>
+        </div>
+    </modal>
+</div>

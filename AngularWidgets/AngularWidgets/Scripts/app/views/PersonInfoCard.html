@@ -1,0 +1,16 @@
+﻿<user-panel name="{{ person.name }}" collapsed="{{ initialCollapsed }}" level="person.level">
+    <person-address></person-address>
+    <div data-ng-show="person.friends">
+        <h4>Friends:</h4>
+        <ul>
+            <li data-ng-repeat="friend in person.friends">
+                {{ friend }}
+                <remove-friend method="RemoveFriend(friend)"></remove-friend>
+            </li>
+        </ul>
+    </div>
+    <div data-ng-show="person.rank">
+        Rank: {{ person.rank }}
+    </div>
+    <button type="button" class="btn btn-success" data-ng-click="KnightMe(person)" data-ng-hide="person.rank">Knight Me</button>
+</user-panel>

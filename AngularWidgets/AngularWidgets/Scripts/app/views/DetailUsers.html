@@ -1,0 +1,9 @@
+﻿<div class="panel panel-primary" data-ng-repeat="user in users" data-ng-show="user === state.selectedUser">
+    <div class="panel-heading">
+        {{ user.name }}
+    </div>
+    <div class="panel-body">
+        {{ user.address.planet }}
+        <br /> {{ user.job }}
+    </div>
+</div>

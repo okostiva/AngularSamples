@@ -1,0 +1,41 @@
+﻿<h2>Structral Directives</h2>
+<h4 class="text-muted" data-ng-if="showSubtitle">They modify the structure of the DOM.</h4>
+<input type="checkbox" data-ng-model="showSubtitle" /> Show Subtitle
+
+<h4 class="well">Bounty Hunters</h4>
+<div user-list="hunter in bountyHunters">
+    <span>Age: {{ hunter.age }}</span>
+</div>
+<hr />
+<button type="button" class="btn btn-primary" data-ng-click="Add()">Add</button>
+<button type="button" class="btn btn-danger" data-ng-click="Remove()">Remove</button>
+
+<h4>People</h4>
+<ul>
+    <li data-ng-repeat="person in people">
+        {{ person }}
+    </li>
+</ul>
+
+<h4>Quality</h4>
+<div data-ng-switch on="quality">
+    <div data-ng-switch-when="good">
+        Episodes IV, V, VI
+    </div>
+    <div data-ng-switch-when="bad">
+        Episodes I, II, III
+    </div>
+</div>
+<input type="radio" name="quality" data-ng-model="quality" value="good" /> Good
+<input type="radio" name="quality" data-ng-model="quality" value="bad" /> Bad
+
+<div my-transclude>
+    <div data-ng-repeat="item in items">
+        {{ item }}
+    </div>
+</div>
+
+<div my-lazy-render="showIt" echo data-ng-repeat="item in items">
+    {{ item }}
+</div>
+<button class="btn btn-primary" type="button" data-ng-click="showIt = true">Show It</button>

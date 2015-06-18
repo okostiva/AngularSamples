@@ -1,0 +1,17 @@
+﻿<person-info-card person="person" collapsed="true"></person-info-card>
+<person-info-card person="person1" collapsed="true"></person-info-card>
+<droid-info-card droid="droid" collapsed="false"></droid-info-card>
+
+<my-question q="Where is the rebel base?">
+    <input type="text" data-ng-model="answers.baseLocation" />
+</my-question>
+
+<my-question q="Are you my brother?">
+    <input type="radio" data-ng-value="true" data-ng-model="answers.brother" /> Yes
+    <input type="radio" data-ng-value="false" data-ng-model="answers.brother" /> No
+</my-question>
+
+<my-question q="Are Are these the droids I'm looking for?">
+    <button type="button" class="btn btn-xs btn-default" data-ng-click="">Yes</button>
+    <button type="button" class="btn btn-lg btn-primary" data-ng-click="">No</button>
+</my-question>

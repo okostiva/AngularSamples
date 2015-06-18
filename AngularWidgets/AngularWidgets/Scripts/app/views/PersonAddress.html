@@ -1,0 +1,10 @@
+﻿<div data-ng-show="person.address && !collapsed" data-ng-click="CollapseAddress()">
+    <h4>Address:</h4>
+    {{ person.address.street }}
+    <br /> {{ person.address.city }}
+    <br /> {{ person.address.planet }}
+</div>
+<div data-ng-show="person.address && collapsed" data-ng-click="ExpandAddress()">
+    <h4>Address:</h4>
+    {{ person.address.planet }}...
+</div>

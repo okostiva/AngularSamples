@@ -1,0 +1,5 @@
+﻿<ul class="list-unstyled">
+    <li data-ng-repeat="user in users" style="margin-bottom: 5px;">
+        <button type="button" class="btn" data-ng-click="state.selectedUser = user" data-ng-class="{ 'btn-success': user === state.selectedUser, 'btn-primary':user !== state.selectedUser }">{{ user.name }}</button>
+    </li>
+</ul>

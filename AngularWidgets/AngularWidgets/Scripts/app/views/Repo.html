@@ -1,0 +1,15 @@
+﻿<div>
+    <h4>{{ repo.name }}</h4>
+
+    <div>
+        Issues: {{ repo.open_issues_count }}
+    </div>
+
+    <ul class="gravatar-list">
+        <li data-ng-repeat="contributor in contributors | orderBy:'login'">
+            <img class="gravatar" data-ng-src="{{ contributor.avatar_url }}" title="{{ contributor.login }}" />
+            <span>{{ contributor.login }}</span>
+        </li>
+    </ul>
+</div>
+<a href="#/person/{{ login }}">Back to {{ login }}</a>
